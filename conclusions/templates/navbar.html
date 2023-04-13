@@ -1,0 +1,61 @@
+{% block navbar %}
+
+<nav class="navigation">
+    {% load static %}
+
+    {% if "pl" in request.path %}
+    <a href="/pl/">
+        <img class="logo" src="{% static 'logo-cropped.png' %}" alt="My image">
+    </a>
+    <div class="nav-empty"></div>
+    <ul class="nav-list">
+        <li>
+            <a class="nav-item" href="/pl/">
+                Strona Główna
+            </a>
+        </li>
+        <li>
+            <a class="nav-item" href="mailto: rafaldraws@conclusion.eu">Kontakt</a>
+        </li>
+        <li>
+            <a class="nav-item" href="https://github.com/rafal-draws">GitHub</a>
+        </li>
+
+
+        {% else %}
+        <a href="/en/">
+            <img class="logo" src="{% static 'logo-cropped.png' %}" alt="My image" href="/en/">
+        </a>
+        <div class="nav-empty"></div>
+        <ul class="nav-list">
+            <li>
+                <a class="nav-item" href="/en/">
+                    Homepage
+                </a>
+            </li>
+            <li>
+                <a class="nav-item" href="mailto: rafaldraws@conclusion.eu">Contact</a>
+            </li>
+            <li>
+                <a class="nav-item" href="https://github.com/rafal-draws">GitHub</a>
+            </li>
+            {% endif %}
+
+        </ul>
+        <div class="language-switch-panel">
+            {% if 'pl' in request.path %}
+            <button class="language-switch-button" onclick="location.href = '/en';">
+                EN 🇺🇸
+            </button>
+            {% else %}
+
+            <button class="language-switch-button" onclick="location.href = '/pl';">
+                PL 🇵🇱
+            </button>
+            {% endif %}
+        </div>
+
+</nav>
+
+
+{% endblock navbar %}

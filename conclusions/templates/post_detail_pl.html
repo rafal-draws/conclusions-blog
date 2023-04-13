@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="post-detail">
+    <div class="post-detail-title">{% block title %} {{ object.title }} {% endblock title %}</div>
+    <p class="post-detail-metadata">{{ plpost.author }} | {{ plpost.created_on }}</p>
+    <p class="post-detail-text">{{ object.content | safe }}</p>
+</div>
+{% endblock content %}

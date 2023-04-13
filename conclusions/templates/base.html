@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Conclusions</title>
+    {% load static %}
+    <link href='https://fonts.googleapis.com/css?family=Hammersmith One' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'base.css' %}" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" integrity="sha512-MJHc50a/FgjKbk5E5r5XggfmnyggeL5hQKjAHtFwILtgyz/iucmqKTN1qch8dWbX9SWoqsZzAYLZtuK8OnwWxg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js" integrity="sha512-cWf9b7+rIcnZOScV7C4ns4OjV7oJndGyNYiU6W8dIotX9ZnCz+j3e49wW8zLx44nwx30HkfVYQ23gW8BOV7X9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-scala.min.js" integrity="sha512-y3/MqY/3PPW8dak/b0QoGexR+byLZwW8sdzEYYfK/n3L3q+1W/mJ8nkcpJ+7IUrGFlXksfn7fazJ54CeqWw8Tw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js" integrity="sha512-N4vXzZ23mpCpHtMgS8tLQRhF1GQy/r+f+FX4W8gBwuYacB+CcZlcyoZwW8GvMn0s+mC92xRyvj1WQhEKg9T3qA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+
+    <script>
+        $(document).ready(function () {
+            $('p.post-detail-text code').each(function () {
+                var codeText = $(this).html();
+                var lang = $(this).attr('language');
+                if (lang) {
+                    $(this).removeClass().addClass('language-' + lang);
+                }
+                $(this).html(Prism.highlight(codeText, Prism.languages[lang]));
+            });
+        });
+    </script>
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" integrity="sha512-MJHc50a/FgjKbk5E5r5XggfmnyggeL5hQKjAHtFwILtgyz/iucmqKTN1qch8dWbX9SWoqsZzAYLZtuK8OnwWxg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js" integrity="sha512-cWf9b7+rIcnZOScV7C4ns4OjV7oJndGyNYiU6W8dIotX9ZnCz+j3e49wW8zLx44nwx30HkfVYQ23gW8BOV7X9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-scala.min.js" integrity="sha512-y3/MqY/3PPW8dak/b0QoGexR+byLZwW8sdzEYYfK/n3L3q+1W/mJ8nkcpJ+7IUrGFlXksfn7fazJ54CeqWw8Tw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js" integrity="sha512-N4vXzZ23mpCpHtMgS8tLQRhF1GQy/r+f+FX4W8gBwuYacB+CcZlcyoZwW8GvMn0s+mC92xRyvj1WQhEKg9T3qA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+
+</head>
+
+
+<body>
+
+
+
+    {% block navbar %}
+    {% include 'navbar.html' %}
+    {% endblock navbar %}
+
+    {% block content %}
+    <!--content-->
+    {% endblock content %}
+
+    <footer class="footer">
+
+        <p>copyright &copy; Rafał Draws </p>
+
+    </footer>
+</body>
+
+</html>
